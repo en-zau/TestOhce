@@ -2,7 +2,7 @@ from src.Periodes import Periodes
 from src.langue.Constantes import Constantes
 class LangueAnglaise:
 
-    def bonjour(self, ):
+    def bonjour(self, periode ):
         match periode:
             case Periodes.MATIN:
                 return Constantes.Anglais.GOOD_MORNING
