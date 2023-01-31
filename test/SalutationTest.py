@@ -4,7 +4,7 @@ from parameterized import parameterized
 
 from OhceBuilder import OhceBuilder
 from OhceBuilder import OhceBuilder
-from src.langue import Constantes
+from src.langue.Constantes import Constantes
 from src.langue.LangueAnglaise import LangueAnglaise
 from src.langue.LangueFrancaise import LangueFrancaise
 
