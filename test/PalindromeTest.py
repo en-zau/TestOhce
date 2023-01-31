@@ -1,5 +1,7 @@
 import unittest
 from parameterized import parameterized
+from src.langue.LangueAnglaise import LangueAnglaise
+from src.langue.LangueFrancaise import LangueFrancaise
 
 from OhceBuilder import OhceBuilder
 
@@ -14,7 +16,7 @@ class PalindromeTest(unittest.TestCase):
 
     @parameterized.expand([
         [LangueAnglaise(), "Well done"],
-        [LangueFr(), "Bien dit"],
+        [LangueFrancaise(), "Bien dit"],
     ])
     def test_palindrome(self, languechoisie, bien_dit):
         palindrome = "radar"
@@ -29,3 +31,4 @@ class PalindromeTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    unittest.main()
