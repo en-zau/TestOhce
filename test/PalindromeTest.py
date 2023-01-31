@@ -1,6 +1,7 @@
 import unittest
 from parameterized import parameterized
 
+from OhceBuilder import OhceBuilder
 
 class PalindromeTest(unittest.TestCase):
     def test_renvoi_miroir(self):
