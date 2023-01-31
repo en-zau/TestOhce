@@ -1,5 +1,6 @@
 import unittest
 from parameterized import parameterized
+from src.langue.Constantes import Constantes
 from src.langue.LangueAnglaise import LangueAnglaise
 from src.langue.LangueFrancaise import LangueFrancaise
 
@@ -15,8 +16,8 @@ class PalindromeTest(unittest.TestCase):
         self.assertIn(chaine[::-1], chaine_renvoye)
 
     @parameterized.expand([
-        [LangueAnglaise(), "Well done"],
-        [LangueFrancaise(), "Bien dit"],
+        [LangueAnglaise(), Constantes.Anglais.WELL_DONE],
+        [LangueFrancaise(), Constantes.Francais.BIEN_DIT],
     ])
     def test_palindrome(self, languechoisie, bien_dit):
         palindrome = "radar"
