@@ -3,7 +3,7 @@ from src.Ohce import Ohce
 
 class PalindromeTest(unittest.TestCase):
     def test_renvoi_miroir(self):
-        chaine = "toto"
+        chaine = "oula"
 
 
         ohce = Ohce()
