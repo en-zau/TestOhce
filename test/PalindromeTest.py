@@ -3,6 +3,7 @@ from parameterized import parameterized
 from src.langue.Constantes import Constantes
 from src.langue.LangueAnglaise import LangueAnglaise
 from src.langue.LangueFrancaise import LangueFrancaise
+from LangueSpy import LangueSpy
 
 from OhceBuilder import OhceBuilder
 
@@ -30,6 +31,12 @@ class PalindromeTest(unittest.TestCase):
         resultat_apres_palindrome = resultat[len(palindrome):len(resultat)]
         self.assertIn(palindrome + bien_dit, resultat_apres_palindrome)
 
+    def test_non_palindrome(self):
+        langue = LangueSpy()
+        ohce = OhceBuilder().langue(langue).build()
+        ohce.palindrome("Merguez")
+
+        self.assertEqual(0, langue.nb_bien_dit)
 
 if __name__ == '__main__':
     unittest.main()

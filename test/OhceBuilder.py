@@ -1,10 +1,11 @@
 from src.Ohce import Ohce
 from src.Periodes import Periodes
+from LangueStub import LangueStub
 
 
 class OhceBuilder:
     def __init__(self):
-        self.__langue = ""
+        self.__langue = LangueStub
         self.__periode = Periodes.DEFAULT
 
     def build(self):
