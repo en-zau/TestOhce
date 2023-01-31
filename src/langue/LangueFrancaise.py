@@ -1,10 +1,11 @@
+from src.langue.Constantes import Constantes
 class LangueFrancaise:
 
     def bonjour(self, ):
-        return "Bonjour"
+        return Constantes.Francais.BONJOUR
 
     def bien_dit(self):
-        return "Bien dit"
+        return Constantes.Francais.BIEN_DIT
 
     def au_revoir(self):
-        return "Au revoir"
+        return Constantes.Francais.AU_REVOIR
