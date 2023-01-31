@@ -4,8 +4,12 @@ from parameterized import parameterized
 
 from OhceBuilder import OhceBuilder
 from OhceBuilder import OhceBuilder
+from src.langue import Constantes
 from src.langue.LangueAnglaise import LangueAnglaise
 from src.langue.LangueFrancaise import LangueFrancaise
+
+
+class SalutationTest(unittest.TestCase):
 
     @parameterized.expand(
         [
@@ -14,7 +18,9 @@ from src.langue.LangueFrancaise import LangueFrancaise
         ])
     def test_bonjour(self, languechoisie, attendu):
         ohce = OhceBuilder().langue(languechoisie).build()
-	@@ -22,8 +23,8 @@ def test_bonjour(self, languechoisie, attendu):
+        resultat = ohce.palindrome("test")
+
+        self.assertEqual(attendu, resultat[0:len(attendu)])
 
     @parameterized.expand(
         [
