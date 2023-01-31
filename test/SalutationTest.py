@@ -4,6 +4,7 @@ from parameterized import parameterized
 
 from OhceBuilder import OhceBuilder
 from OhceBuilder import OhceBuilder
+from src.Periodes import Periodes
 from src.langue.Constantes import Constantes
 from src.langue.LangueAnglaise import LangueAnglaise
 from src.langue.LangueFrancaise import LangueFrancaise
@@ -11,7 +12,7 @@ from src.langue.LangueFrancaise import LangueFrancaise
 
 class SalutationTest(unittest.TestCase):
 
-     @ parameterized.expand(
+     @parameterized.expand(
         [
             [LangueAnglaise(), Periodes.DEFAULT, Constantes.Anglais.HELLO],
             [LangueAnglaise(), Periodes.MATIN, Constantes.Anglais.GOOD_MORNING],
@@ -27,7 +28,7 @@ class SalutationTest(unittest.TestCase):
     def test_bonjour(self, langue, periode, attendu):
         ohce = OhceBuilder().langue(langue).periode(periode).build()
         resultat = ohce.palindrome("test")
-
+    
         self.assertEqual(attendu, resultat[0:len(attendu)])
 
 
@@ -36,8 +37,8 @@ class SalutationTest(unittest.TestCase):
             [LangueAnglaise(), Periodes.DEFAULT, Constantes.Anglais.GOOD_BYE],
             [LangueFrancaise(), Periodes.DEFAULT, Constantes.Francais.AU_REVOIR],
         ])
-    def test_au_revoir(self, langue, periode, salutation):
-        ohce = OhceBuilder().langue(langue).periode(periode).build()
-        resultat = ohce.palindrome("test")
 
-        self.assertEqual(attendu, resultat[-len(attendu):])
+    def test_au_revoir(self, langue, periode, salutation):
+        ohce = OhceBuilder().langue(langue).build()
+        resultat = ohce.palindrome("test")
+        self.assertEqual(salutation, resultat[-len(salutation):])

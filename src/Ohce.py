@@ -1,7 +1,8 @@
 class Ohce:
 
-    def __init__(self, langue):
+    def __init__(self, langue, periode):
         self.__langue = langue
+        self.__periode = periode
 
     def revert(self, chaine):
         return chaine[::-1]
@@ -14,7 +15,7 @@ class Ohce:
                + self.au_revoir()
 
     def bonjour(self):
-        return self.__langue.bonjour()
+        return self.__langue.bonjour(self.__periode)
 
     def bien_dit(self):
         return self.__langue.bien_dit()
