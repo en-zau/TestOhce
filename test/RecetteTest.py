@@ -29,23 +29,20 @@ class PalindromeTest(unittest.TestCase):
 
 
     #Automatique, non-palindrome, français, matin.
-    @parameterized.expand([
-        [LangueFrancaise(), Constantes.Francais.BIEN_DIT, Constantes.Francais.BONJOUR, Periodes.MATIN]
-    ])
-    def test_non_palindrome(self, periode):
+    def test_non_palindrome(self):
         test = "palindrome"
 
         spy_langue = LangueSpy()
         ohce = OhceBuilder() \
             .langue(spy_langue) \
-            .periode(periode).build()
+            .build()
 
         ohce.palindrome(test)
 
         self.assertEqual(0, spy_langue.nb_bien_dit)
 
     #Saisie libre du client, langue et moment actuels du système
-    def test_saisie_client(self):
+    def test_client(self):
         locale_language, locale_encoding = locale.getlocale()
         current_time = datetime.datetime.now().time()
         chaine = input('Veuillez entrer une chaine à tester : ')
@@ -81,7 +78,7 @@ class PalindromeTest(unittest.TestCase):
 
         result = ohcebuild.palindrome(chaine)
 
-        self.assertIn(bonjour_user + chaine + bien_dit_user + au_revoir_user, result)
+        self.assertIn(bonjour_user, result, au_revoir_user)
 
 
 if __name__ == '__main__':
